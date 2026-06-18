@@ -25,7 +25,16 @@
 		    <url>http://54.82.92.150:8081/repository/batch17d-repo-release/</url>
 		</repository>
   	</distributionManagement>
-    
+
+	<dependencies>
+    		<!-- Jakarta JSTL for Tomcat 10/11 -->
+    		<dependency>
+        		<groupId>org.glassfish.web</groupId>
+        		<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        		<version>3.0.0</version>
+    		</dependency>
+	</dependencies>
+
     <build>
         <plugins>
             <plugin>
