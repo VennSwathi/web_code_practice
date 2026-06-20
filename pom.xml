@@ -26,21 +26,6 @@
 		</repository>
   	</distributionManagement>
 
-	<dependencies>
-    		<!-- Jakarta JSTL for Tomcat 10/11 -->
-    		<dependency>
-        		<groupId>org.glassfish.web</groupId>
-        		<artifactId>jakarta.servlet.jsp.jstl</artifactId>
-			<version>3.0.0</version>
-			<exclusions>
-                                <exclusion>
-                                    <groupId>jakarta.servlet.jsp.jstl</groupId>
-                                    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-                                </exclusion>
-                        </exclusions>
-
-    		</dependency>
-	</dependencies>
 
     <build>
         <plugins>
