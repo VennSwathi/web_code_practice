@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git clone') {
+            steps {
+                echo 'git checkout'
+                git branch: 'main', url: 'https://github.com/VennSwathi/web_code_practice.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the code with maven'
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                echo 'Deploy application to tomcat'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://54.197.29.2:8080/')], contextPath: 'pipelinescript-test', war: '**/*.war'
+            }
+        }
+    }
+}
