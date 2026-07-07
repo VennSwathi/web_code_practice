@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tool{
+        maven_3.9.15
+   }
 
     stages {
         stage('Git clone') {
